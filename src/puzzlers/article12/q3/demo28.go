@@ -21,9 +21,9 @@ func main() {
 
 	// 示例3。
 	complexArray1 := [3][]string{
-		[]string{"d", "e", "f"},
-		[]string{"g", "h", "i"},
-		[]string{"j", "k", "l"},
+		{"d", "e", "f"},
+		{"g", "h", "i"},
+		{"j", "k", "l"},
 	}
 	fmt.Printf("The complex array: %v\n", complexArray1)
 	complexArray2 := modifyComplexArray(complexArray1)

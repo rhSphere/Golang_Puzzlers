@@ -33,7 +33,9 @@ func main() {
 	op := func(x, y int) int {
 		return x + y
 	}
-	result, err := calculate(x, y, op)
+	result, err := calculate(x, y, func(x, y int) int {
+		return x + y
+	})
 	fmt.Printf("The result: %d (error: %v)\n",
 		result, err)
 	result, err = calculate(x, y, nil)

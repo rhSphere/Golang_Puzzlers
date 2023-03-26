@@ -11,5 +11,9 @@ func printToStd(contents string) (bytesNum int, err error) {
 func main() {
 	var p Printer
 	p = printToStd
-	p("something")
+	i, err := p("something")
+	if err != nil {
+		return
+	}
+	fmt.Println(i)
 }

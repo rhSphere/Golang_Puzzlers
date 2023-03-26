@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 var channels = [3]chan int{
+	//make(chan int),
 	nil,
-	make(chan int),
+	make(chan int, 1),
+	//make(chan int),
 	nil,
 }
 
