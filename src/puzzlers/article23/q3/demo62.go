@@ -23,11 +23,11 @@ func main() {
 		for mailbox == 1 {
 			sendCond.Wait()
 		}
-		log.Printf("sender [%d-%d]: the mailbox is empty.",
-			id, index)
+		//log.Printf("sender [%d-%d]: the mailbox is empty.",
+		//	id, index)
 		mailbox = 1
-		log.Printf("sender [%d-%d]: the letter has been sent.",
-			id, index)
+		//log.Printf("sender [%d-%d]: the letter has been sent.",
+		//	id, index)
 		lock.Unlock()
 		recvCond.Broadcast()
 	}
@@ -59,6 +59,7 @@ func main() {
 			send(id, i)
 		}
 	}(0, max)
+
 	go func(id, max int) { // 用于收信。
 		defer func() {
 			sign <- struct{}{}
@@ -68,6 +69,7 @@ func main() {
 			recv(id, j)
 		}
 	}(1, max/2)
+
 	go func(id, max int) { // 用于收信。
 		defer func() {
 			sign <- struct{}{}
